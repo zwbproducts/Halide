@@ -1334,7 +1334,7 @@ bool Shuffle::is_concat() const {
 }
 
 std::optional<int> Shuffle::is_transpose() const {
-    if (vectors.size() > 1 ||
+    if (vectors.size() != 1 ||
         (int)indices.size() != vectors[0].type().lanes() ||
         indices.size() < 2 ||
         indices[0] != 0 ||
